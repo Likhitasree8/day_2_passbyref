@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Pass by reference</title>
+</head>
+<body>
+<h1 style="text-align:center"><u>Pass by reference</u></h1><br><br><br><br>
+<script>
+function passbyref(object)
+{
+var T=object.a;
+object.a=object.b;
+object.b=T;
+
+document.write("<h3>In the pass by reference function: </h3>");
+document.write(`<h3>a=${object.a}, b=${object.b} </h3><br><br>`);
+}
+var object={ a:"",b:""};
+
+object.a=parseInt(prompt("Enter 1st Number value:"));
+object.b=parseInt(prompt("Enter 2nd Number value:"));
+
+document.write('<h3>Before the swap: <br> </h3>');
+document.write(`<h3>a=${object.a}, b=${object.b} </h3><br><br>`);
+
+passbyref(object);
+
+document.write("<h3>After the swap:  </h3>");
+document.write(`<h3>a=${object.a}, b=${object.b}</h3><br><br>`);
+</script>
+</body>
+</html>
